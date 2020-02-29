@@ -6,10 +6,10 @@ var bodyParser = require('body-parser');
 
 //start mysql connection
 var connection = mysql.createConnection({
-  host     : 'localhost', //mysql database host name
-  user     : 'root', //mysql database user name
-  password : '123', //mysql database password
-  database : 'test' //mysql database name
+  host     : 'us-cdbr-iron-east-04.cleardb.net', //mysql database host name
+  user     : 'b165cea90fbe99', //mysql database user name
+  password : '2c9f14e7', //mysql database password
+  database : 'heroku_e3e3a039f7ae290' //mysql database name
 });
 
 connection.connect(function(err) {
@@ -74,8 +74,8 @@ app.post('/customer',(req, res) => {
   let sql = "INSERT INTO customer SET ?";
   let query = connection.query(sql, body,(err, results) => {
     if(err) throw err;
-     res.end(JSON.stringify());
-    //console.log(data)
+    // res.end(JSON.stringify());
+    console.log(data)
   });
 });
 
