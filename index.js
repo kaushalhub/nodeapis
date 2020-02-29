@@ -35,6 +35,10 @@ var server = app.listen(4000,  "127.0.0.1", function () {
 
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello')
+});
+
 //rest api to get all customers
 app.get('/customer', function (req, res) {
    connection.query('select * from customer', function (error, results, fields) {
